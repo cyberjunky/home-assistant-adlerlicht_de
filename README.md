@@ -6,7 +6,7 @@
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://www.paypal.me/cyberjunkynl/)
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-red.svg?style=for-the-badge&logo=github)](https://github.com/sponsors/cyberjunky)
 
-<img src="custom_components/adlerlicht_de/brand/icon.png" alt="Adlerlicht" width="128" align="right">
+<img src="https://raw.githubusercontent.com/cyberjunky/home-assistant-adlerlicht_de/main/custom_components/adlerlicht_de/brand/icon.png" alt="Adlerlicht" width="128" align="right">
 
 # Adlerlicht Integration
 
