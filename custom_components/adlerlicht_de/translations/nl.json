@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adlerlicht",
+        "description": "Voer een plaatsnaam in. Alleen plaatsen met een eigen pagina op adlerlicht.de kunnen worden opgevraagd.",
+        "data": {
+          "query": "Plaats"
+        }
+      },
+      "place": {
+        "title": "Plaats kiezen",
+        "description": "Meerdere plaatsen komen overeen met je zoekopdracht.",
+        "data": {
+          "place": "Plaats"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbinding met adlerlicht.de mislukt",
+      "no_city_found": "Geen plaats met een eigen pagina op adlerlicht.de gevonden"
+    },
+    "abort": {
+      "already_configured": "Deze plaats is al geconfigureerd"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Adlerlicht opties",
+        "data": {
+          "categories": "Categorieën",
+          "radius": "Straal rond thuislocatie",
+          "max_reports": "Maximum aantal meldingen"
+        },
+        "data_description": {
+          "categories": "Toon alleen meldingen in deze categorieën. Laat leeg voor alle categorieën.",
+          "radius": "Toon alleen meldingen binnen deze afstand van je thuislocatie. 0 betekent geen limiet.",
+          "max_reports": "Hoeveel van de nieuwste meldingen op de kaart worden getoond."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "report_count": {
+        "name": "Meldingen"
+      },
+      "latest_report": {
+        "name": "Nieuwste melding"
+      },
+      "latest_category": {
+        "name": "Nieuwste categorie"
+      }
+    },
+    "event": {
+      "new_report": {
+        "name": "Nieuwe melding"
+      }
+    }
+  }
+}

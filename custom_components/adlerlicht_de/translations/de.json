@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adlerlicht",
+        "description": "Gib einen Ortsnamen ein. Nur Orte mit einer eigenen Seite auf adlerlicht.de können abgefragt werden.",
+        "data": {
+          "query": "Ort"
+        }
+      },
+      "place": {
+        "title": "Ort auswählen",
+        "description": "Mehrere Orte passen zu deiner Suche.",
+        "data": {
+          "place": "Ort"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zu adlerlicht.de fehlgeschlagen",
+      "no_city_found": "Kein Ort mit eigener Seite auf adlerlicht.de gefunden"
+    },
+    "abort": {
+      "already_configured": "Dieser Ort ist bereits eingerichtet"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Adlerlicht Optionen",
+        "data": {
+          "categories": "Kategorien",
+          "radius": "Umkreis um den Wohnort",
+          "max_reports": "Maximale Anzahl an Meldungen"
+        },
+        "data_description": {
+          "categories": "Nur Meldungen dieser Kategorien anzeigen. Leer lassen für alle Kategorien.",
+          "radius": "Nur Meldungen innerhalb dieser Entfernung vom Wohnort anzeigen. 0 bedeutet keine Begrenzung.",
+          "max_reports": "Wie viele der neuesten Meldungen auf der Karte angezeigt werden."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "report_count": {
+        "name": "Meldungen"
+      },
+      "latest_report": {
+        "name": "Neueste Meldung"
+      },
+      "latest_category": {
+        "name": "Neueste Kategorie"
+      }
+    },
+    "event": {
+      "new_report": {
+        "name": "Neue Meldung"
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "city": "Gera",
+  "bundesland": "Thüringen",
+  "stats": {
+    "plz": [
+      {
+        "rank": 1,
+        "plz": "07548",
+        "n": 26
+      }
+    ]
+  },
+  "map": {
+    "points": [
+      {
+        "id": "aaa1",
+        "lat": 50.88,
+        "lon": 12.08,
+        "cat": "assault"
+      },
+      {
+        "id": "aaa2",
+        "lat": 50.89,
+        "lon": 12.09,
+        "cat": "traffic"
+      },
+      {
+        "id": "aaa3",
+        "lat": 50.9,
+        "lon": 12.1,
+        "cat": "burglary"
+      },
+      {
+        "id": "aaa4",
+        "lat": 52.52,
+        "lon": 13.405,
+        "cat": "traffic"
+      }
+    ],
+    "located": 4,
+    "streetPrecise": 3
+  },
+  "feed": {
+    "neu": [
+      {
+        "id": "aaa2",
+        "title": "Auffahrunfall auf der Bundesstraße",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "traffic"
+        ],
+        "city": "Musterstraße, Gera",
+        "publishedAt": "2026-09-18T09:00:00.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      },
+      {
+        "id": "aaa1",
+        "title": "Streit zwischen zwei Männern eskaliert",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "assault"
+        ],
+        "city": "Musterstraße, Gera",
+        "publishedAt": "2026-09-18T04:44:35.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      },
+      {
+        "id": "aaa3",
+        "title": "Einbruch in ein Einfamilienhaus",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "burglary"
+        ],
+        "city": "Musterstraße, Gera",
+        "publishedAt": "2026-09-17T18:10:00.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      },
+      {
+        "id": "aaa4",
+        "title": "Unfall auf der Stadtautobahn",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "traffic"
+        ],
+        "city": "Stadtautobahn, Berlin",
+        "publishedAt": "2026-09-17T12:00:00.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      },
+      {
+        "id": "ungeocoded",
+        "title": "Meldung ohne Koordinaten",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "other"
+        ],
+        "city": "Musterstraße, Gera",
+        "publishedAt": "2026-09-18T10:00:00.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      }
+    ],
+    "top": [
+      {
+        "id": "aaa2",
+        "title": "Auffahrunfall auf der Bundesstraße",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "traffic"
+        ],
+        "city": "Musterstraße, Gera",
+        "publishedAt": "2026-09-18T09:00:00.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      },
+      {
+        "id": "aaa1",
+        "title": "Streit zwischen zwei Männern eskaliert",
+        "summary": "Zusammenfassung der Meldung.",
+        "categories": [
+          "assault"
+        ],
+        "city": "Musterstraße, Gera",
+        "publishedAt": "2026-09-18T04:44:35.000Z",
+        "incidentDate": "2026-09-17",
+        "incidentTime": "07:35",
+        "incidentTimePrecision": "approximate",
+        "moderator": {
+          "schlagzeile": null
+        },
+        "votesUp": 0,
+        "votesDown": 0
+      }
+    ],
+    "votesEnabled": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "domain": "adlerlicht_de",
+  "name": "Adlerlicht",
+  "codeowners": ["@cyberjunky"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/cyberjunky/home-assistant-adlerlicht_de",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/cyberjunky/home-assistant-adlerlicht_de/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
