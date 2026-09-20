@@ -36,4 +36,4 @@ if [ $rc -ne 0 ]; then
 	exit $rc
 fi
 
-vulture . --min-confidence 75 --ignore-names policy --exclude .venv
+vulture . --min-confidence 75 --ignore-names policy,enable_custom_integrations --exclude .venv

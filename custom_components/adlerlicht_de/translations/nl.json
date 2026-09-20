@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Adlerlicht",
-        "description": "Voer een plaatsnaam in. Alleen plaatsen met een eigen pagina op adlerlicht.de kunnen worden opgevraagd.",
+        "description": "Voer het begin van een plaatsnaam in, bijvoorbeeld “Bad K” of “Frankf”. Alleen plaatsen met een eigen pagina op adlerlicht.de kunnen worden opgevraagd.",
         "data": {
           "query": "Plaats"
         }
@@ -18,7 +18,7 @@
     },
     "error": {
       "cannot_connect": "Verbinding met adlerlicht.de mislukt",
-      "no_city_found": "Geen plaats met een eigen pagina op adlerlicht.de gevonden"
+      "no_city_found": "Geen resultaat. De naam moet beginnen zoals de plaats begint, dus “Kissingen” vindt “Bad Kissingen” niet. Gebruik minstens twee tekens."
     },
     "abort": {
       "already_configured": "Deze plaats is al geconfigureerd"

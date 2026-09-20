@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Adlerlicht",
-        "description": "Gib einen Ortsnamen ein. Nur Orte mit einer eigenen Seite auf adlerlicht.de können abgefragt werden.",
+        "description": "Gib den Anfang eines Ortsnamens ein, zum Beispiel „Bad K“ oder „Frankf“. Nur Orte mit einer eigenen Seite auf adlerlicht.de können abgefragt werden.",
         "data": {
           "query": "Ort"
         }
@@ -18,7 +18,7 @@
     },
     "error": {
       "cannot_connect": "Verbindung zu adlerlicht.de fehlgeschlagen",
-      "no_city_found": "Kein Ort mit eigener Seite auf adlerlicht.de gefunden"
+      "no_city_found": "Kein Treffer. Der Name muss so beginnen wie der Ort, „Kissingen“ findet also nicht „Bad Kissingen“. Mindestens zwei Zeichen eingeben."
     },
     "abort": {
       "already_configured": "Dieser Ort ist bereits eingerichtet"

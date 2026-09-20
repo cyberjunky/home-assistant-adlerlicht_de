@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Adlerlicht",
-        "description": "Enter a city name. Only cities that have their own page on adlerlicht.de can be monitored.",
+        "description": "Enter the start of a city name, for example “Bad K” or “Frankf”. Only cities that have their own page on adlerlicht.de can be monitored.",
         "data": {
           "query": "City"
         }
@@ -18,7 +18,7 @@
     },
     "error": {
       "cannot_connect": "Failed to connect to adlerlicht.de",
-      "no_city_found": "No city with its own page on adlerlicht.de matches this name"
+      "no_city_found": "No match. The name has to start the way the city does, so “Kissingen” will not find “Bad Kissingen”. Use at least two characters."
     },
     "abort": {
       "already_configured": "This city is already configured"

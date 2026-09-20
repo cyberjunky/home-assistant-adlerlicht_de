@@ -9,7 +9,7 @@ repos:
         entry: codespell
         args:
           - --quiet-level=2
-          - --ignore-words-list=hass,ba,fo
+          - --ignore-words-list=hass,ba,fo,ue,oe,ae
           - --skip=tests/fixtures/*,custom_components/adlerlicht_de/translations/*
 
       - id: pyupgrade

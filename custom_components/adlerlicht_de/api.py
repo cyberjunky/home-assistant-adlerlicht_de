@@ -37,6 +37,14 @@ _USER_AGENT = (
 )
 _TIMEOUT = ClientTimeout(total=30)
 
+# The suggest endpoint ignores anything shorter and matches literally, so a
+# name typed without umlauts is retried in these spellings instead.
+_MIN_QUERY_LENGTH = 2
+_MAX_UMLAUT_VARIANTS = 5
+_UMLAUT_DIGRAPHS = (("ae", "ä"), ("oe", "ö"), ("ue", "ü"))
+_UMLAUT_VOWELS = (("a", "ä"), ("o", "ö"), ("u", "ü"))
+_SHARP_S = ("ss", "ß")
+
 
 class AdlerlichtError(Exception):
     """Raised when adlerlicht.de cannot be reached or returns junk."""
@@ -123,6 +131,43 @@ def _extract(payload: str, key: str) -> Any | None:
     return _scan_json(payload, match.end())
 
 
+def _umlaut_variants(query: str) -> list[str]:
+    """Return the spellings to retry for a query typed without umlauts.
+
+    Both conventions are covered: the digraphs used on keyboards without
+    umlauts ("koeln", "muenchen") and a bare vowel left unmarked ("koln",
+    "munchen"). Only one bare vowel is replaced per variant, which is enough
+    for German city names and keeps the number of extra requests small.
+    """
+    if len(query) < _MIN_QUERY_LENGTH:
+        return []
+
+    lowered = query.lower()
+    variants: list[str] = []
+
+    def add(candidate: str) -> None:
+        if candidate != lowered and candidate not in variants:
+            variants.append(candidate)
+
+    umlauted = lowered
+    for digraph, umlaut in _UMLAUT_DIGRAPHS:
+        umlauted = umlauted.replace(digraph, umlaut)
+
+    # The umlauts and the sharp s are substituted separately as well as
+    # together: applying both at once turns "duesseldorf" into "düßeldorf"
+    # instead of "düsseldorf", while "giessen" needs the sharp s on its own.
+    add(umlauted)
+    add(lowered.replace(*_SHARP_S))
+    add(umlauted.replace(*_SHARP_S))
+
+    for index, char in enumerate(lowered):
+        for vowel, umlaut in _UMLAUT_VOWELS:
+            if char == vowel:
+                add(f"{lowered[:index]}{umlaut}{lowered[index + 1 :]}")
+
+    return variants[:_MAX_UMLAUT_VARIANTS]
+
+
 def _parse_timestamp(value: str | None) -> datetime | None:
     """Parse an ISO timestamp as used by the site."""
     if not value:
@@ -157,7 +202,24 @@ class AdlerlichtClient:
             raise AdlerlichtError(f"Error fetching {path}: {err}") from err
 
     async def async_suggest_cities(self, query: str) -> list[Place]:
-        """Return the cities matching ``query`` that have their own page."""
+        """Return the cities matching ``query`` that have their own page.
+
+        The suggest endpoint matches literally, so a name typed without umlauts
+        finds nothing. When the query as typed has no match, the umlaut
+        spellings are tried in turn so "koeln" and "koln" still reach "Köln".
+        """
+        places = await self._async_suggest(query)
+        if places:
+            return places
+
+        for variant in _umlaut_variants(query):
+            if places := await self._async_suggest(variant):
+                return places
+
+        return []
+
+    async def _async_suggest(self, query: str) -> list[Place]:
+        """Return the cities the endpoint reports for exactly this spelling."""
         body = await self._get(
             "/api/location/suggest",
             params={"q": query},
