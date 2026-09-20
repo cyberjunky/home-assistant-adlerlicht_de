@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+permissions: {}
+
+jobs:
+  lint:
+    name: Ruff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install ruff
+        run: python -m pip install ruff
+
+      - name: Check formatting
+        run: ruff format --check .
+
+      - name: Lint
+        run: ruff check .
+
+  test:
+    name: Pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest pytest-cov pytest-homeassistant-custom-component
+
+      - name: Run tests
+        run: pytest --cov=custom_components/adlerlicht_de --cov-report=term-missing
